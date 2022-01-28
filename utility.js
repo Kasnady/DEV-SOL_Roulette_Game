@@ -17,6 +17,12 @@ export const airDropSol = async (publicKey) => {
     }
 };
 
+export const generateWallet = () => web3.Keypair.generate();
+
+export const getWallet = async (secretKey) => {
+    return web3.Keypair.fromSecretKey(Uint8Array.from(secretKey));
+}
+
 export const getWalletBalance = async (pubk) => {
     try{
         const connection = _getConnection();
